@@ -1,0 +1,17 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: nebula-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: nebula
+      POSTGRES_PASSWORD: nebula
+      POSTGRES_DB: nebula
+    # Run on 5433 to avoid clashing with the Phantom Postgres on 5432.
+    ports:
+      - "5433:5432"
+    volumes:
+      - nebula-postgres-data:/var/lib/postgresql/data
+
+volumes:
+  nebula-postgres-data:

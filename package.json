@@ -1,0 +1,21 @@
+{
+  "name": "nebula",
+  "private": true,
+  "version": "0.0.1",
+  "description": "Nebula — Hosting product for the Phantom control plane.",
+  "license": "UNLICENSED",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "build": "npm run build --workspaces --if-present",
+    "dev:api": "npm run dev --workspace @nebula/api",
+    "dev:web": "npm run dev --workspace @nebula/web",
+    "db:up": "docker compose up -d postgres",
+    "db:down": "docker compose down",
+    "db:migrate": "npm run db:migrate --workspace @nebula/api",
+    "db:generate": "npm run db:generate --workspace @nebula/api",
+    "lint": "npm run lint --workspaces --if-present",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  }
+}
