@@ -11,6 +11,7 @@ import {
 import { authController } from "./modules/auth/auth.controller.js";
 import { meController } from "./modules/customers/customers.controller.js";
 import { phantomController } from "./modules/phantom/phantom.controller.js";
+import { serversController } from "./modules/servers/servers.controller.js";
 
 export function createApp() {
   const app = express();
@@ -31,6 +32,7 @@ export function createApp() {
   app.use("/auth", authController);
   app.use("/me", meController);
   app.use("/me", phantomController);
+  app.use("/servers", serversController);
 
   app.use(notFoundHandler);
   app.use(errorHandler);

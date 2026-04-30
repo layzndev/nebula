@@ -95,9 +95,11 @@ nebula/
 
 | PR | Scope |
 | -- | --- |
-| 0 | **Scaffold** — auth, Phantom ping (this PR) |
-| 1 | "My servers" page + provisioning via Phantom `POST /platform/tenants/:id/servers` |
-| 2 | Console proxy (signed URL once Phantom exposes it) |
-| 3 | Stripe billing — plans, subscriptions, invoices |
-| 4 | Outbound webhooks from Phantom (server.ready, server.crashed, …) |
-| 5 | Public signup (closed beta first) |
+| 0 | **Scaffold** — auth, Phantom ping |
+| 1 | **Provisioning** — auto-create tenant on first call, `/servers` list, `/servers/new` form |
+| 2 | **Lifecycle + settings** — Start/Stop/Restart/Delete, MOTD/difficulty/gameMode/maxPlayers/whitelist |
+| 3 | **Console embed** — signed-URL ticket from Phantom, in-browser WebSocket console with command input |
+| 4 | Stripe billing — plans, subscriptions, invoices |
+| 5 | Outbound webhooks from Phantom (server.ready, server.crashed, tenant.over_quota) |
+| 6 | Public signup (invite codes / waitlist + email verification) |
+| 7 | Account management (password change, account delete cascade) |
